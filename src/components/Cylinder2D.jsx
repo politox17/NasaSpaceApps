@@ -1,25 +1,49 @@
 import React, { useState } from "react";
+import { isValidObject, getObjectDimensions } from "../data/objectsDatabase.js";
 
 export default function Orbit2DView({ radius, planeIndex }) {
   const [objects, setObjects] = useState([]);
   const [inputName, setInputName] = useState("");
   const [draggingIdx, setDraggingIdx] = useState(null);
   const [collision, setCollision] = useState(false);
+  const [validationError, setValidationError] = useState("");
   const scale = 50;
 
   const handleAdd = () => {
     if (!inputName) return;
+    
+    // Validazione oggetto
+    if (!isValidObject(inputName)) {
+      setValidationError(`Oggetto "${inputName}" non valido. Usa solo oggetti dalla lista consentita.`);
+      return;
+    }
+    
+    // Ottieni dimensioni ergonomiche
+    const dimensions = getObjectDimensions(inputName);
+    if (!dimensions) {
+      setValidationError("Errore nel recupero delle dimensioni dell'oggetto.");
+      return;
+    }
+    
+    // Calcola dimensioni in pixel (usando ergonomic width e length)
+    const objWidth = dimensions.ergonomicWidth * scale;
+    const objHeight = dimensions.ergonomicLength * scale;
+    
     const obj = {
       name: inputName,
       x: 0,
       y: 0,
-      width: 20,
-      height: 20,
+      width: objWidth,
+      height: objHeight,
       color: "#" + Math.floor(Math.random() * 16777215).toString(16),
       error: false,
+      mass: dimensions.mass,
+      people: dimensions.people
     };
+    
     setObjects([...objects, obj]);
     setInputName("");
+    setValidationError("");
   };
 
   const handleMouseDown = (idx) => setDraggingIdx(idx);
@@ -63,14 +87,23 @@ export default function Orbit2DView({ radius, planeIndex }) {
       {collision && (
         <p style={{ color: "red", fontWeight: "bold" }}>Error: overlapping object!!!</p>
       )}
+      {validationError && (
+        <p style={{ color: "red", fontWeight: "bold", marginBottom: "10px" }}>
+          {validationError}
+        </p>
+      )}
 
       <div style={{ display: "flex", alignItems: "flex-start", gap: "20px" }}>
         {/* Controlli e legenda */}
         <div>
           <input
             value={inputName}
-            onChange={(e) => setInputName(e.target.value)}
-            placeholder="Nome oggetto"
+            onChange={(e) => {
+              setInputName(e.target.value);
+              setValidationError(""); // Reset error when typing
+            }}
+            placeholder="Nome oggetto (es: Personal recreation)"
+            style={{ width: "200px", marginRight: "10px" }}
           />
           <button onClick={handleAdd}>Add object</button>
 
@@ -88,12 +121,17 @@ export default function Orbit2DView({ radius, planeIndex }) {
                 style={{
                   width: "15px",
                   height: "15px",
-                  backgroundColor: obj.color,
+                  backgroundColor: obj.error ? "red" : obj.color,
                   marginRight: "5px",
                   border: "1px solid #000",
                 }}
               />
-              <span>{obj.name}</span>
+              <div style={{ fontSize: "0.8rem" }}>
+                <div style={{ fontWeight: "bold" }}>{obj.name}</div>
+                <div style={{ color: "#666" }}>
+                  Massa: {obj.mass}kg | Persone: {obj.people}
+                </div>
+              </div>
             </div>
           ))}
         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import OrbitSetup from "./OrbiteSetup";
 import MoonMarsSetup from "./MoonMarsSetup";
-import "./../styles/Welcome.css"; // importiamo il CSS
+import "../styles/Welcome.css"; // importiamo il CSS
 
 export default function Welcome() {
   const [selection, setSelection] = useState(null);
