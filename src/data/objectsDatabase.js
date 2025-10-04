@@ -30,7 +30,7 @@ export const validObjects = {
     people: 1.3,
     height: 0.18,
     length: 0.14,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.01,
     ergonomicWidth: 1.01
@@ -38,10 +38,10 @@ export const validObjects = {
   "Changing volume": {
     mass: 20.0,
     coverage: 1.0,
-    people: 20,
+    people: 20.0,
     height: 0.9,
     length: 0.4,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.18,
     ergonomicWidth: 1.18
@@ -52,7 +52,7 @@ export const validObjects = {
     people: 1.3,
     height: 0.15,
     length: 0.15,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.01,
     ergonomicWidth: 1.01
@@ -63,7 +63,7 @@ export const validObjects = {
     people: 0.1,
     height: 0.05,
     length: 0.08,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.9,
     ergonomicLength: 0.95,
     ergonomicWidth: 0.95
@@ -74,7 +74,7 @@ export const validObjects = {
     people: 37.5,
     height: 0.91,
     length: 0.43,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.24,
     ergonomicWidth: 1.24
@@ -85,7 +85,7 @@ export const validObjects = {
     people: 0.8,
     height: 0.12,
     length: 0.15,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 0.99,
     ergonomicWidth: 0.99
@@ -96,7 +96,7 @@ export const validObjects = {
     people: 0.5,
     height: 0.08,
     length: 0.15,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 0.97,
     ergonomicWidth: 0.97
@@ -107,7 +107,7 @@ export const validObjects = {
     people: 0.5,
     height: 0.29,
     length: 0.19,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.6,
     ergonomicLength: 0.7,
     ergonomicWidth: 0.7
@@ -118,7 +118,7 @@ export const validObjects = {
     people: 0.3,
     height: 0.08,
     length: 0.12,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 0.95,
     ergonomicWidth: 0.95
@@ -129,7 +129,7 @@ export const validObjects = {
     people: 0.8,
     height: 0.1,
     length: 0.18,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 0.98,
     ergonomicWidth: 0.98
@@ -137,10 +137,10 @@ export const validObjects = {
   "Changing clothes": {
     mass: 5.0,
     coverage: 1.0,
-    people: 5,
+    people: 5.0,
     height: 0.55,
     length: 0.25,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.06,
     ergonomicWidth: 1.06
@@ -148,7 +148,7 @@ export const validObjects = {
   "Meditation": {
     mass: 2.0,
     coverage: 1.0,
-    people: 2,
+    people: 2.0,
     height: 0.12,
     length: 0.37,
     width: 2.2,
@@ -159,7 +159,7 @@ export const validObjects = {
   "Non-sleep rest / relaxation": {
     mass: 3.0,
     coverage: 1.0,
-    people: 3,
+    people: 3.0,
     height: 0.16,
     length: 0.43,
     width: 2.2,
@@ -170,10 +170,10 @@ export const validObjects = {
   "Single person private work/ent./comm.": {
     mass: 5.0,
     coverage: 1.0,
-    people: 5,
+    people: 5.0,
     height: 0.37,
     length: 0.29,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.9,
     ergonomicLength: 1.08,
     ergonomicWidth: 1.08
@@ -181,10 +181,10 @@ export const validObjects = {
   "Sleep accommodation": {
     mass: 30.0,
     coverage: 1.0,
-    people: 30,
+    people: 30.0,
     height: 0.47,
     length: 0.99,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 1.2,
     ergonomicLength: 1.03,
     ergonomicWidth: 1.03
@@ -195,7 +195,7 @@ export const validObjects = {
     people: 0.4,
     height: 0.28,
     length: 0.21,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.6,
     ergonomicLength: 0.7,
     ergonomicWidth: 0.7
@@ -206,7 +206,7 @@ export const validObjects = {
     people: 0.5,
     height: 0.05,
     length: 0.26,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.9,
     ergonomicLength: 1.09,
     ergonomicWidth: 1.09
@@ -217,7 +217,7 @@ export const validObjects = {
     people: 0.5,
     height: 0.1,
     length: 0.15,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.9,
     ergonomicLength: 0.96,
     ergonomicWidth: 0.96
@@ -236,7 +236,7 @@ export const validObjects = {
   "Aerobic exercise (treadmill)": {
     mass: 200.0,
     coverage: 3.0,
-    people: 1,
+    people: 1.0,
     height: 1.07,
     length: 0.53,
     width: 2.3,
@@ -294,7 +294,7 @@ export const validObjects = {
     people: 0.11,
     height: 1.07,
     length: 0.2,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 1.07,
     ergonomicLength: 1.1,
     ergonomicWidth: 1.1
@@ -305,7 +305,7 @@ export const validObjects = {
     people: 0.2,
     height: 0.5,
     length: 0.2,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.1,
     ergonomicWidth: 1.1
@@ -316,7 +316,7 @@ export const validObjects = {
     people: 0.74,
     height: 0.47,
     length: 0.41,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.31,
     ergonomicWidth: 1.31
@@ -327,7 +327,7 @@ export const validObjects = {
     people: 0.96,
     height: 0.64,
     length: 0.56,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.46,
     ergonomicWidth: 1.46
@@ -338,7 +338,7 @@ export const validObjects = {
     people: 0.16,
     height: 1.93,
     length: 0.97,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 1.93,
     ergonomicLength: 1.87,
     ergonomicWidth: 1.87
@@ -349,7 +349,7 @@ export const validObjects = {
     people: 0.31,
     height: 0.47,
     length: 0.31,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.11,
     ergonomicWidth: 1.11
@@ -360,7 +360,7 @@ export const validObjects = {
     people: 0.43,
     height: 0.52,
     length: 0.17,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 0.97,
     ergonomicWidth: 0.97
@@ -371,7 +371,7 @@ export const validObjects = {
     people: 0.1,
     height: 0.89,
     length: 0.51,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.9,
     ergonomicLength: 1.41,
     ergonomicWidth: 1.41
@@ -382,8 +382,8 @@ export const validObjects = {
     people: 0.32,
     height: 0.4,
     length: 0.28,
-    width: 2,
-    ergonomicHeight: 1,
+    width: 2.0,
+    ergonomicHeight: 1.0,
     ergonomicLength: 1.08,
     ergonomicWidth: 1.08
   },
@@ -391,10 +391,10 @@ export const validObjects = {
     mass: 15.0,
     coverage: 6.0,
     people: 0.1,
-    height: 1,
+    height: 1.0,
     length: 0.6,
-    width: 2,
-    ergonomicHeight: 1,
+    width: 2.0,
+    ergonomicHeight: 1.0,
     ergonomicLength: 1.5,
     ergonomicWidth: 1.5
   },
@@ -404,7 +404,7 @@ export const validObjects = {
     people: 0.66,
     height: 0.48,
     length: 0.36,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.26,
     ergonomicWidth: 1.26
@@ -426,10 +426,10 @@ export const validObjects = {
     people: 0.1,
     height: 1.41,
     length: 0.8,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 1.6,
-    ergonomicLength: 2,
-    ergonomicWidth: 2
+    ergonomicLength: 2.0,
+    ergonomicWidth: 2.0
   },
   "Food item sorting": {
     mass: 12.0,
@@ -437,7 +437,7 @@ export const validObjects = {
     people: 0.35,
     height: 0.56,
     length: 0.28,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.18,
     ergonomicWidth: 1.18
@@ -448,7 +448,7 @@ export const validObjects = {
     people: 0.81,
     height: 0.74,
     length: 0.44,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.34,
     ergonomicWidth: 1.34
@@ -459,7 +459,7 @@ export const validObjects = {
     people: 0.52,
     height: 0.46,
     length: 0.35,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.25,
     ergonomicWidth: 1.25
@@ -470,7 +470,7 @@ export const validObjects = {
     people: 0.85,
     height: 0.5,
     length: 0.43,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 1.1,
     ergonomicLength: 1.23,
     ergonomicWidth: 1.23
@@ -481,7 +481,7 @@ export const validObjects = {
     people: 0.5,
     height: 0.43,
     length: 0.29,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 1.03,
     ergonomicLength: 1.09,
     ergonomicWidth: 1.09
@@ -503,7 +503,7 @@ export const validObjects = {
     people: 0.39,
     height: 0.28,
     length: 0.23,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.88,
     ergonomicLength: 1.03,
     ergonomicWidth: 1.03
@@ -514,7 +514,7 @@ export const validObjects = {
     people: 0.35,
     height: 0.28,
     length: 0.17,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.9,
     ergonomicLength: 1.07,
     ergonomicWidth: 1.07
@@ -525,7 +525,7 @@ export const validObjects = {
     people: 0.14,
     height: 1.63,
     length: 0.82,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 1.63,
     ergonomicLength: 2.02,
     ergonomicWidth: 2.02
@@ -536,7 +536,7 @@ export const validObjects = {
     people: 0.39,
     height: 0.46,
     length: 0.26,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.9,
     ergonomicLength: 1.16,
     ergonomicWidth: 1.16
@@ -547,7 +547,7 @@ export const validObjects = {
     people: 0.09,
     height: 1.37,
     length: 0.77,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 1.6,
     ergonomicLength: 1.97,
     ergonomicWidth: 1.97
@@ -569,7 +569,7 @@ export const validObjects = {
     people: 0.52,
     height: 0.42,
     length: 0.28,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.9,
     ergonomicLength: 1.18,
     ergonomicWidth: 1.18
@@ -580,7 +580,7 @@ export const validObjects = {
     people: 0.55,
     height: 0.45,
     length: 0.3,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.9,
     ergonomicLength: 1.2,
     ergonomicWidth: 1.2
@@ -591,7 +591,7 @@ export const validObjects = {
     people: 0.4,
     height: 0.34,
     length: 0.27,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.07,
     ergonomicWidth: 1.07
@@ -602,7 +602,7 @@ export const validObjects = {
     people: 0.59,
     height: 0.47,
     length: 0.36,
-    width: 2,
+    width: 2.0,
     ergonomicHeight: 0.8,
     ergonomicLength: 1.16,
     ergonomicWidth: 1.16
