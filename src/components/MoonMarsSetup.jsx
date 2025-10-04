@@ -97,6 +97,7 @@ export default function MoonMarsSetup({ type, onBack }) {
               width={boxDims.width}
               depth={boxDims.depth}
               planeIndex={selectedPlane}
+              peopleCount={people}
             />
           )}
 

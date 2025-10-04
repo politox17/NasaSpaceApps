@@ -95,6 +95,7 @@ export default function OrbitSetup({ onBack }) {
             <Cylinder2DView
               radius={Math.sqrt(volume / (Math.PI * 10)) * 1.5} // scala ingrandita
               planeIndex={selectedPlane}
+              peopleCount={people}
             />
           )}
           <button className="back-btn" onClick={onBack}>Go back</button>

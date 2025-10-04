@@ -621,3 +621,42 @@ export const getObjectDimensions = (objectName) => {
   }
   return validObjects[objectName];
 };
+
+// Oggetti obbligatori per ogni persona
+export const mandatoryObjects = [
+  "Sleep accommodation",      // Letto per ogni persona
+  "Hand cleaning",           // Igiene mani
+  "Facial cleaning",         // Igiene viso
+  "Oral hygiene",           // Igiene orale
+  "Changing clothes",        // Cambio vestiti
+  "Liquid waste collection", // Gestione rifiuti liquidi
+  "Solid waste collection"   // Gestione rifiuti solidi
+];
+
+// Funzione per calcolare gli oggetti obbligatori mancanti
+export const getMissingMandatoryObjects = (peopleCount, currentObjects) => {
+  const currentObjectNames = currentObjects.map(obj => obj.name);
+  const missingObjects = [];
+  
+  mandatoryObjects.forEach(objectName => {
+    const requiredCount = Math.ceil(peopleCount / validObjects[objectName].people);
+    const currentCount = currentObjectNames.filter(name => name === objectName).length;
+    
+    if (currentCount < requiredCount) {
+      missingObjects.push({
+        name: objectName,
+        required: requiredCount,
+        current: currentCount,
+        missing: requiredCount - currentCount
+      });
+    }
+  });
+  
+  return missingObjects;
+};
+
+// Funzione per verificare se tutti gli oggetti obbligatori sono presenti
+export const areAllMandatoryObjectsPresent = (peopleCount, currentObjects) => {
+  const missing = getMissingMandatoryObjects(peopleCount, currentObjects);
+  return missing.length === 0;
+};

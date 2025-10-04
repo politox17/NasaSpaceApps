@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { isValidObject, getObjectDimensions } from "../data/objectsDatabase.js";
+import { isValidObject, getObjectDimensions, getMissingMandatoryObjects, areAllMandatoryObjectsPresent } from "../data/objectsDatabase.js";
 
-export default function Box2DView({ width, depth, planeIndex }) {
+export default function Box2DView({ width, depth, planeIndex, peopleCount = 2 }) {
   const [objects, setObjects] = useState([]);
   const [inputName, setInputName] = useState("");
   const [draggingIdx, setDraggingIdx] = useState(null);
@@ -82,6 +82,10 @@ export default function Box2DView({ width, depth, planeIndex }) {
 
   const handleMouseUp = () => setDraggingIdx(null);
 
+  // Calcola oggetti obbligatori mancanti
+  const missingMandatory = getMissingMandatoryObjects(peopleCount, objects);
+  const allMandatoryPresent = areAllMandatoryObjectsPresent(peopleCount, objects);
+
   return (
     <div style={{ marginTop: "20px", display: "flex", gap: "20px" }}>
       <div>
@@ -95,6 +99,37 @@ export default function Box2DView({ width, depth, planeIndex }) {
           <p style={{ color: "red", fontWeight: "bold", marginBottom: "10px" }}>
             {validationError}
           </p>
+        )}
+        {!allMandatoryPresent && (
+          <div style={{ 
+            backgroundColor: "#fff3cd", 
+            border: "1px solid #ffeaa7", 
+            borderRadius: "4px", 
+            padding: "10px", 
+            marginBottom: "10px" 
+          }}>
+            <p style={{ color: "#856404", fontWeight: "bold", margin: "0 0 5px 0" }}>
+              ⚠️ Oggetti obbligatori mancanti per {peopleCount} persone:
+            </p>
+            {missingMandatory.map((item, idx) => (
+              <p key={idx} style={{ color: "#856404", margin: "2px 0", fontSize: "0.9rem" }}>
+                • {item.name}: {item.missing} mancanti (richiesti: {item.required}, presenti: {item.current})
+              </p>
+            ))}
+          </div>
+        )}
+        {allMandatoryPresent && (
+          <div style={{ 
+            backgroundColor: "#d4edda", 
+            border: "1px solid #c3e6cb", 
+            borderRadius: "4px", 
+            padding: "10px", 
+            marginBottom: "10px" 
+          }}>
+            <p style={{ color: "#155724", fontWeight: "bold", margin: "0" }}>
+              ✅ Tutti gli oggetti obbligatori sono presenti!
+            </p>
+          </div>
         )}
         <div style={{ marginBottom: "10px" }}>
           <input
