@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+    color: #fff;
+  }
+  
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .welcome-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+  }
+  
+  .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .planet-btn {
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: #fff;
+  }
+  
+  .planet-btn.orbit {
+    background: #3a9ad9;
+    box-shadow: 0 5px 15px rgba(58,154,217,0.4);
+  }
+  
+  .planet-btn.moon {
+    background: #9aa0a6;
+    box-shadow: 0 5px 15px rgba(154,160,166,0.4);
+  }
+  
+  .planet-btn.mars {
+    background: #ff5733;
+    box-shadow: 0 5px 15px rgba(255,87,51,0.4);
+  }
+  
+  .planet-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
+  
+  @media (max-width: 600px) {
+    .planet-btn {
+      width: 80%;
+      font-size: 1rem;
+      padding: 12px 20px;
+    }
+  }
+  

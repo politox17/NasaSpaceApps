@@ -1,0 +1,56 @@
+:root {
+  --bg-dark: #000000;
+  --bg-light: #0d1b2a;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-hover: rgba(255, 255, 255, 0.1);
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --orbit: #2d6cdf;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(160deg, var(--bg-dark) 0%, var(--bg-light) 100%);
+  color: #fff;
+}
+
+/* Container */
+.welcome-container, .chosen-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  gap: 20px;
+}
+
+/* Titles */
+.title { font-size: 2rem; font-weight: 700; margin:0; }
+.subtitle, .subtitle-small { font-size: 1rem; color: var(--text-muted); }
+
+/* Buttons */
+.btn-grid { display: grid; grid-template-columns: 1fr; gap: 16px; width:100%; max-width: 800px; }
+.dest-btn { border: none; padding:16px; border-radius:12px; font-weight:600; cursor:pointer; background: var(--glass); backdrop-filter: blur(6px); transition: all .25s ease;}
+.dest-btn:hover { transform: translateY(-4px); background: var(--glass-hover); box-shadow:0 8px 16px rgba(0,0,0,0.4); }
+.dest-btn.orbit { border: 1px solid var(--orbit); }
+.dest-btn.moon { border:1px solid #9b9b9b; }
+.dest-btn.mars { border:1px solid #d34a3a; }
+
+.note { color: var(--text-muted); font-size:.85rem; }
+
+/* Form */
+.form-box { display:flex; flex-direction:column; gap:12px; background:var(--glass); padding:20px; border-radius:12px; max-width:300px; width:100%; }
+.form-box label { display:flex; flex-direction:column; text-align:left; font-size:.95rem; color:#fff; }
+.form-box input { padding:8px; border-radius:6px; border:1px solid #555; margin-top:4px; }
+.gen-btn { padding:10px; border-radius:8px; border:none; background:var(--orbit); color:#fff; font-weight:600; cursor:pointer; margin-top:8px; }
+.gen-btn:hover { background:#1d4bb5; }
+
+/* Canvas */
+.canvas-box { width:100%; max-width:800px; height:400px; border-radius:12px; overflow:hidden; border:1px solid #444; }
+
+/* Back button */
+.back-btn { margin-top:12px; padding:10px 16px; border-radius:8px; border:none; background: var(--glass); color:#fff; cursor:pointer; transition: background .2s ease;}
+.back-btn:hover { background: var(--glass-hover); }
