@@ -17,9 +17,9 @@ export default function Welcome() {
       <h1 className="welcome-title">Welcome!</h1>
       <p className="welcome-subtitle">Where do you want to create your home?</p>
       <div className="button-group">
-        <button className="planet-btn orbit" onClick={() => setSelection("orbit")}>Orbita 🛰️</button>
-        <button className="planet-btn moon" onClick={() => setSelection("moon")}>Luna 🌙</button>
-        <button className="planet-btn mars" onClick={() => setSelection("mars")}>Marte ♂️</button>
+        <button className="planet-btn orbit" onClick={() => setSelection("orbit")}>Orbit 🛰️</button>
+        <button className="planet-btn moon" onClick={() => setSelection("moon")}>Moon 🌙</button>
+        <button className="planet-btn mars" onClick={() => setSelection("mars")}>Mars ♂️</button>
       </div>
     </div>
   );

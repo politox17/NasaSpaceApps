@@ -20,13 +20,13 @@ export default function Box2DView({ width, depth, planeIndex, peopleCount = 2, o
     if (!inputName) return;
     
     if (!isValidObject(inputName)) {
-      setValidationError(`Oggetto "${inputName}" non valido. Usa solo oggetti dalla lista consentita.`);
+      setValidationError(`Object "${inputName}" not valid. Use only allowed objects.`);
       return;
     }
     
     const dimensions = getObjectDimensions(inputName);
     if (!dimensions) {
-      setValidationError("Errore nel recupero delle dimensioni dell'oggetto.");
+      setValidationError("Failed to retrieve object dimensions.");
       return;
     }
     
@@ -109,7 +109,7 @@ export default function Box2DView({ width, depth, planeIndex, peopleCount = 2, o
 
   return (
     <div style={{ marginTop: "20px" }}>
-      <h3>Habitat {width}m × {depth}m - Piano {planeIndex + 1}</h3>
+      <h3>Habitat {width}m × {depth}m - Floor {planeIndex + 1}</h3>
       
       {/* Informazioni sullo spazio */}
       <div style={{ 
@@ -120,19 +120,17 @@ export default function Box2DView({ width, depth, planeIndex, peopleCount = 2, o
         marginBottom: "10px" 
       }}>
         <p style={{ color: "#004085", margin: "2px 0", fontSize: "0.9rem" }}>
-          <strong>Spazio disponibile:</strong> {width}m ×  Area {totalArea.toFixed(1)}m²
+          <strong>Available space:</strong> {width}m ×  Area {totalArea.toFixed(1)}m²
         </p>
         <p style={{ color: "#004085", margin: "2px 0", fontSize: "0.9rem" }}>
-          <strong>Spazio utilizzato:</strong> {usedArea.toFixed(1)}m² ({areaUsagePercent}%)
+          <strong>Occupied space:</strong> {usedArea.toFixed(1)}m² ({areaUsagePercent}%)
         </p>
-        <p style={{ color: "#004085", margin: "2px 0", fontSize: "0.8rem", fontStyle: "italic" }}>
-          Gli oggetti possono estendersi oltre i bordi - la parte eccedente verrà tagliata
-        </p>
+      
       </div>
 
       {collision && (
         <p style={{ color: "red", fontWeight: "bold" }}>
-          ⚠️ Errore: oggetti in collisione!
+          ⚠️ Error: overlapping object!
         </p>
       )}
       {validationError && (
@@ -149,11 +147,11 @@ export default function Box2DView({ width, depth, planeIndex, peopleCount = 2, o
           marginBottom: "10px" 
         }}>
           <p style={{ color: "#856404", fontWeight: "bold", margin: "0 0 5px 0" }}>
-            ⚠️ Oggetti obbligatori mancanti per {peopleCount} persone:
+            ⚠️ Required objects missing for {peopleCount} people:
           </p>
           {missingMandatory.map((item, idx) => (
             <p key={idx} style={{ color: "#856404", margin: "2px 0", fontSize: "0.9rem" }}>
-              • {item.name}: {item.missing} mancanti (richiesti: {item.required}, presenti: {item.current})
+              • {item.name}: {item.missing} missing (required: {item.required}, placed: {item.current})
             </p>
           ))}
         </div>
@@ -167,7 +165,7 @@ export default function Box2DView({ width, depth, planeIndex, peopleCount = 2, o
           marginBottom: "10px" 
         }}>
           <p style={{ color: "#155724", fontWeight: "bold", margin: "0" }}>
-            ✅ Tutti gli oggetti obbligatori sono presenti!
+            ✅ All required objects are placed!
           </p>
         </div>
       )}
@@ -182,16 +180,16 @@ export default function Box2DView({ width, depth, planeIndex, peopleCount = 2, o
                 setInputName(e.target.value);
                 setValidationError("");
               }}
-              placeholder="Nome oggetto (es: Personal recreation)"
+              placeholder="Object name (es: Personal recreation)"
               style={{ width: "100%", marginBottom: "8px" }}
             />
-            <button onClick={handleAdd} style={{ width: "100%" }}>Aggiungi oggetto</button>
+            <button onClick={handleAdd} style={{ width: "100%" }}>Add object</button>
           </div>
 
-          <h4 style={{ marginTop: "10px", marginBottom: "8px" }}>Legenda Oggetti</h4>
+          <h4 style={{ marginTop: "10px", marginBottom: "8px" }}>Legend</h4>
           {localObjects.length === 0 && (
             <p style={{ color: "#888", fontSize: "0.85rem", fontStyle: "italic" }}>
-              Nessun oggetto aggiunto
+             No object added
             </p>
           )}
           {localObjects.map((obj, idx) => (
@@ -222,7 +220,7 @@ export default function Box2DView({ width, depth, planeIndex, peopleCount = 2, o
                   {obj.realWidth.toFixed(1)}m × {obj.realHeight.toFixed(1)}m
                 </div>
                 <div style={{ color: "#666", fontSize: "0.75rem" }}>
-                  Massa: {obj.mass}kg • Persone: {obj.people}
+                  Mass: {obj.mass}kg • People: {obj.people}
                 </div>
               </div>
             </div>
@@ -349,10 +347,6 @@ export default function Box2DView({ width, depth, planeIndex, peopleCount = 2, o
             <text x={150} y={150 - (depth * scale) / 2 - 10} textAnchor="middle" fontSize="10" fill="#666">0</text>
             <text x={150} y={150 + (depth * scale) / 2 + 15} textAnchor="middle" fontSize="10" fill="#666">{depth}m</text>
           </svg>
-          
-          <div style={{ textAlign: "center", marginTop: "8px", fontSize: "0.8rem", color: "#666" }}>
-            Trascina gli oggetti per posizionarli • Scala: 1m = {(1 * scale).toFixed(2)}px
-          </div>
         </div>
       </div>
     </div>

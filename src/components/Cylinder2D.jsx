@@ -20,13 +20,13 @@ export default function Orbit2DView({ radius, planeIndex, peopleCount = 2, objec
     if (!inputName) return;
     
     if (!isValidObject(inputName)) {
-      setValidationError(`Oggetto "${inputName}" non valido. Usa solo oggetti dalla lista consentita.`);
+      setValidationError(`Object "${inputName}" not valid. Use only allowed objects.`);
       return;
     }
     
     const dimensions = getObjectDimensions(inputName);
     if (!dimensions) {
-      setValidationError("Errore nel recupero delle dimensioni dell'oggetto.");
+      setValidationError("Failed to retrieve object's dimensions.");
       return;
     }
     
@@ -120,19 +120,17 @@ export default function Orbit2DView({ radius, planeIndex, peopleCount = 2, objec
         marginBottom: "10px" 
       }}>
         <p style={{ color: "#004085", margin: "2px 0", fontSize: "0.9rem" }}>
-          <strong>Spazio disponibile:</strong> Raggio {radius.toFixed(1)}m • Area {totalArea.toFixed(1)}m²
+          <strong>Available space:</strong> Radius {radius.toFixed(1)}m • Area {totalArea.toFixed(1)}m²
         </p>
         <p style={{ color: "#004085", margin: "2px 0", fontSize: "0.9rem" }}>
-          <strong>Spazio utilizzato:</strong> {usedArea.toFixed(1)}m² ({areaUsagePercent}%)
+          <strong>Occupied space:</strong> {usedArea.toFixed(1)}m² ({areaUsagePercent}%)
         </p>
-        <p style={{ color: "#004085", margin: "2px 0", fontSize: "0.8rem", fontStyle: "italic" }}>
-          Gli oggetti possono estendersi oltre i bordi - la parte eccedente verrà tagliata
-        </p>
+        
       </div>
 
       {collision && (
         <p style={{ color: "red", fontWeight: "bold" }}>
-          ⚠️ Errore: oggetti in collisione!
+          ⚠️ Error: overlapping objects!
         </p>
       )}
       {validationError && (
@@ -149,11 +147,11 @@ export default function Orbit2DView({ radius, planeIndex, peopleCount = 2, objec
           marginBottom: "10px" 
         }}>
           <p style={{ color: "#856404", fontWeight: "bold", margin: "0 0 5px 0" }}>
-            ⚠️ Oggetti obbligatori mancanti per {peopleCount} persone:
+            ⚠️ Required objects missing for {peopleCount} people:
           </p>
           {missingMandatory.map((item, idx) => (
             <p key={idx} style={{ color: "#856404", margin: "2px 0", fontSize: "0.9rem" }}>
-              • {item.name}: {item.missing} mancanti (richiesti: {item.required}, presenti: {item.current})
+              • {item.name}: {item.missing} missing (required: {item.required}, placed: {item.current})
             </p>
           ))}
         </div>
@@ -167,7 +165,7 @@ export default function Orbit2DView({ radius, planeIndex, peopleCount = 2, objec
           marginBottom: "10px" 
         }}>
           <p style={{ color: "#155724", fontWeight: "bold", margin: "0" }}>
-            ✅ Tutti gli oggetti obbligatori sono presenti!
+            ✅ All required objects are placed!
           </p>
         </div>
       )}
@@ -182,16 +180,16 @@ export default function Orbit2DView({ radius, planeIndex, peopleCount = 2, objec
                 setInputName(e.target.value);
                 setValidationError("");
               }}
-              placeholder="Nome oggetto (es: Personal recreation)"
+              placeholder="Object name (es: Personal recreation)"
               style={{ width: "100%", marginBottom: "8px" }}
             />
-            <button onClick={handleAdd} style={{ width: "100%" }}>Aggiungi oggetto</button>
+            <button onClick={handleAdd} style={{ width: "100%" }}>Add object</button>
           </div>
 
-          <h4 style={{ marginTop: "10px", marginBottom: "8px" }}>Legenda Oggetti</h4>
+          <h4 style={{ marginTop: "10px", marginBottom: "8px" }}>Legend</h4>
           {localObjects.length === 0 && (
             <p style={{ color: "#888", fontSize: "0.85rem", fontStyle: "italic" }}>
-              Nessun oggetto aggiunto
+              No object added
             </p>
           )}
           {localObjects.map((obj, idx) => (
@@ -316,9 +314,6 @@ export default function Orbit2DView({ radius, planeIndex, peopleCount = 2, objec
             <circle cx={150} cy={150} r={2} fill="red" />
           </svg>
           
-          <div style={{ textAlign: "center", marginTop: "8px", fontSize: "0.8rem", color: "#666" }}>
-            Trascina gli oggetti per posizionarli • Scala: 1m = {(1 * scale).toFixed(0)}px
-          </div>
         </div>
       </div>
     </div>
