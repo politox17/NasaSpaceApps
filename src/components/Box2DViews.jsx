@@ -120,7 +120,7 @@ export default function Box2DView({ width, depth, planeIndex, peopleCount = 2, o
         marginBottom: "10px" 
       }}>
         <p style={{ color: "#004085", margin: "2px 0", fontSize: "0.9rem" }}>
-          <strong>Spazio disponibile:</strong> {width}m × {depth}m • Area {totalArea.toFixed(1)}m²
+          <strong>Spazio disponibile:</strong> {width}m ×  Area {totalArea.toFixed(1)}m²
         </p>
         <p style={{ color: "#004085", margin: "2px 0", fontSize: "0.9rem" }}>
           <strong>Spazio utilizzato:</strong> {usedArea.toFixed(1)}m² ({areaUsagePercent}%)
@@ -351,7 +351,7 @@ export default function Box2DView({ width, depth, planeIndex, peopleCount = 2, o
           </svg>
           
           <div style={{ textAlign: "center", marginTop: "8px", fontSize: "0.8rem", color: "#666" }}>
-            Trascina gli oggetti per posizionarli • Scala: 1m = {(1 * scale).toFixed(0)}px
+            Trascina gli oggetti per posizionarli • Scala: 1m = {(1 * scale).toFixed(2)}px
           </div>
         </div>
       </div>

@@ -84,3 +84,4 @@ Se inserisci **4 persone**:
 - Gli oggetti obbligatori sono definiti nel file `objectsDatabase.js`
 - La logica è implementata in entrambi i componenti 2D (Box2D e Cylinder2D)
 - Il numero di persone viene passato dai componenti principali (MoonMarsSetup e OrbitSetup)
+

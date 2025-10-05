@@ -304,7 +304,7 @@ export default function Orbit2DView({ radius, planeIndex, peopleCount = 2, objec
                         fontWeight="bold"
                         pointerEvents="none"
                       >
-                        {obj.realWidth.toFixed(0)}×{obj.realHeight.toFixed(0)}
+                        {obj.realWidth.toFixed(2)}×{obj.realHeight.toFixed(2)}
                       </text>
                     )}
                   </g>
