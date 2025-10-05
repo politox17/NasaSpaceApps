@@ -17,3 +17,20 @@ If you are developing a production application, we recommend using TypeScript wi
 # NasaSpaceApps
 
 This application is a rappresentation of the challenge "Your Home in Space: The Habitat Layout Creator". The idea is to allow to a user to create a custom layout of an hypothetical house in three space enviroments (orbit, Moon, Mars) following the technical rules of the engineering.
+
+# Dependecies
+# Start the project:
+
+    npx create-vite@latest space-habitat --template react
+    cd space-habitat 
+    npm install
+
+# Install three.js
+    npm install three
+# Install react-three/fiber and react-three/drei
+    npm install @react-three/fiber @react-three/drei
+# To run
+    npn run dev
+  
+
+
