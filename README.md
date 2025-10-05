@@ -30,7 +30,7 @@ This application is a rappresentation of the challenge "Your Home in Space: The 
 # Install react-three/fiber and react-three/drei
     npm install @react-three/fiber @react-three/drei
 # To run
-    npn run dev
+    npm run dev
   
 
 
